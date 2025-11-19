@@ -455,7 +455,7 @@ func (p *Plugin) sendOpenMeetingWSEvent(joinURL, userID, channelID string) {
 	broadcast := &model.WebsocketBroadcast{
 		UserId:                userID,
 		ChannelId:             channelID,
-		ContainsSensitiveData: true,
+		ContainsSensitiveData: false,
 	}
 
 	p.API.PublishWebSocketEvent(wsEventJoinOpenMeeting, payload, broadcast)
